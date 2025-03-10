@@ -6,7 +6,7 @@ interface BlogEntry {
   title: string;
   excerpt: string;
   author: string;
-  date: string;
+  date: Date;
 }
 
 @Component({
@@ -25,21 +25,21 @@ export class AppComponent {
       title: 'First Blog Post',
       excerpt: 'This is a brief excerpt of the first blog post...',
       author: 'John Doe',
-      date: 'June 15, 2024',
+      date: new Date('June 15, 2024'),
       category: 'general',
     },
     {
       title: 'Another Interesting Article',
       excerpt: 'Here goes a summary of the second blog entry...',
       author: 'Jane Smith',
-      date: 'June 14, 2024',
+      date: new Date('June 14, 2024'),
       category: 'general',
     },
     {
       title: 'Technology Trends',
       excerpt: 'Exploring the latest developments in tech...',
       author: 'Alex Johnson',
-      date: 'June 13, 2024',
+      date: new Date('June 13, 2024'),
       category: 'tech',
     },
   ]

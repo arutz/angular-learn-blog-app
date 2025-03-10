@@ -1,8 +1,10 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
+export type BlogCategory = 'general' | 'tech' | 'lifestyle' | 'travel' | 'food'
+
 interface BlogEntry {
-  category: string
+  category: BlogCategory
   title: string;
   excerpt: string;
   author: string;
@@ -17,8 +19,8 @@ interface BlogEntry {
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'my-blog-app'
-  subtitle = 'musings of an angular newbie'
+  title = 'My angular Blog'
+  subtitle = 'Musings of an angular newbie'
 
   blogEntries: BlogEntry[] = [
     {
@@ -33,7 +35,7 @@ export class AppComponent {
       excerpt: 'Here goes a summary of the second blog entry...',
       author: 'Jane Smith',
       date: new Date('June 14, 2024'),
-      category: 'general',
+      category: 'lifestyle',
     },
     {
       title: 'Technology Trends',

@@ -2,7 +2,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 98vh;
+  height: 97vh;
 }
 
 .blog-header {
@@ -115,7 +115,7 @@
 }
 
 .form-control {
-  width: 90%;
+  width: 99%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;

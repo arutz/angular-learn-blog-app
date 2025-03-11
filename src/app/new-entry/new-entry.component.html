@@ -13,8 +13,7 @@
         class="blog-entry-form"
         [style.display]="display()? 'block':'none'"
   >
-    <div class="form-group">
-      <label for="title">Entry Title</label>
+    <control-element label="Title">
       <input #title
              required
              type="text"
@@ -22,10 +21,9 @@
              name="title"
              class="form-control"
       />
-    </div>
+    </control-element>
 
-    <div class="form-group">
-      <label for="category">Category</label>
+    <control-element label="Category">
       <select
         required
         #category
@@ -39,10 +37,9 @@
         <option value="travel">Travel</option>
         <option value="food">Food</option>
       </select>
-    </div>
+    </control-element>
 
-    <div class="form-group">
-      <label for="content">Full Content</label>
+    <control-element label="Content">
       <textarea
         required
         #description
@@ -51,7 +48,8 @@
         class="form-control"
         rows="3"
       ></textarea>
-    </div>
+    </control-element>
+
 
     <div class="form-actions">
       <button

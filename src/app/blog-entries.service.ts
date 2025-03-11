@@ -53,7 +53,7 @@ export class BlogEntriesService {
   }
 
   save() {
-    localStorage.setItem('blog-entries', JSON.stringify(this.blogEntries))
+    localStorage.setItem('blog-entries', JSON.stringify(this.blogEntries()))
   }
 
   onNewEntry(entry: { title: string, description: string, category: string }) {

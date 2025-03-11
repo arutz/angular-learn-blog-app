@@ -1,13 +1,23 @@
-import { Component, inject } from '@angular/core'
-import { Router } from '@angular/router'
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router'
 
 @Component({
   selector: 'app-navigation',
-  imports: [],
+  imports: [
+    RouterLinkActive,
+    RouterLink,
+  ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css',
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
 
-  router = inject(Router)
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
+
+  ngOnInit(): void {
+    // Get the current route's URL as a string
+    this.activatedRoute.url.subscribe(frag => console.log(frag))
+  }
+
 }

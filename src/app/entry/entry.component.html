@@ -4,7 +4,7 @@
     {{ description() }}
   </p>
   <div class="blog-entry-meta">
-    <span>By {{ user() }}</span> | <span>{{ createdAt() }}</span> |
+    <span>By {{ user() }}</span> | <span>{{ createdAt() | date:'short' }}</span> |
     <span>{{ category() }}</span>
   </div>
 </div>

@@ -1,0 +1,61 @@
+<div class="blog-new-entry">
+  <!-- Blog entry toggle -->
+  <div class="blog-entry-toggle-container">
+    <button class="blog-entry-toggle-btn" (click)="toggleForm()">
+      <span class="blog-entry-toggle-icon">+</span>
+      <span class="blog-entry-toggle-text">New Entry</span>
+    </button>
+  </div>
+  <!-- Blog Entry Form -->
+  <form #form
+        (ngSubmit)="onNewEntry(title.value, category.value, description.value); toggleForm()"
+        class="blog-entry-form"
+        [style.display]="display()? 'block':'none'"
+  >
+    <div class="form-group">
+      <label for="title">Entry Title</label>
+      <input #title
+             type="text"
+             id="title"
+             name="title"
+             class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select
+        #category
+        id="category"
+        name="category"
+        class="form-control"
+      >
+        <option value="">Select Category</option>
+        <option value="technology">Technology</option>
+        <option value="lifestyle">Lifestyle</option>
+        <option value="travel">Travel</option>
+        <option value="food">Food</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="content">Full Content</label>
+      <textarea
+        #description
+        id="content"
+        name="content"
+        class="form-control"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-actions">
+      <button
+        type="submit"
+        class="btn btn-primary"
+      >
+        Publish Entry
+      </button>
+    </div>
+  </form>
+</div>

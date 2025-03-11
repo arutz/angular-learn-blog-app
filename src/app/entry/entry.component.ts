@@ -1,8 +1,11 @@
 import { Component, input } from '@angular/core'
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-entry',
-  imports: [],
+  imports: [
+    DatePipe,
+  ],
   templateUrl: './entry.component.html',
   styleUrl: './entry.component.css',
 })

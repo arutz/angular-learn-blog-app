@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="blog-entries">
-        @for (entry of blogEntries; track entry.id) {
+        @for (entry of entries; track entry.id) {
           <app-entry [title]="entry.title"
                      [description]="entry.excerpt"
                      [createdAt]="entry.date"
@@ -41,64 +41,7 @@
       </div>
 
       <!-- New blog entry container -->
-      <div class="blog-new-entry">
-        <!-- Blog entry toggle -->
-        <div class="blog-entry-toggle-container">
-          <button class="blog-entry-toggle-btn" (click)="toggleForm()">
-            <span class="blog-entry-toggle-icon">+</span>
-            <span class="blog-entry-toggle-text">New Entry</span>
-          </button>
-        </div>
-        <!-- Blog Entry Form -->
-        <form
-          class="blog-entry-form"
-          [style.display]="display()? 'block':'none'"
-        >
-          <div class="form-group">
-            <label for="title">Entry Title</label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              class="form-control"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="category">Category</label>
-            <select
-              id="category"
-              name="category"
-              class="form-control"
-            >
-              <option value="">Select Category</option>
-              <option value="technology">Technology</option>
-              <option value="lifestyle">Lifestyle</option>
-              <option value="travel">Travel</option>
-              <option value="food">Food</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="content">Full Content</label>
-            <textarea
-              id="content"
-              name="content"
-              class="form-control"
-              rows="3"
-            ></textarea>
-          </div>
-
-          <div class="form-actions">
-            <button
-              type="submit"
-              class="btn btn-primary"
-            >
-              Publish Entry
-            </button>
-          </div>
-        </form>
-      </div>
+      <app-new-entry></app-new-entry>
     </div>
   </div>
 </div>

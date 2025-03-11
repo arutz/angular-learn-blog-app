@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, signal } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { HeaderComponent } from './header/header.component'
 import { NavigationComponent } from './navigation/navigation.component'
@@ -51,4 +51,9 @@ export class AppComponent {
     },
   ]
 
+  display = signal(false)
+
+  toggleForm() {
+    this.display.update((oldVal) => !oldVal)
+  }
 }

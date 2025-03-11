@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router'
+import { Component, effect, OnInit, signal } from '@angular/core'
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router'
 
 @Component({
   selector: 'app-navigation',
@@ -12,12 +12,22 @@ import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router'
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router) {
+    effect(() => {
+      console.log(this.currentRoute())
+    })
   }
 
+  currentRoute = signal('')
+
   ngOnInit(): void {
-    // Get the current route's URL as a string
-    this.activatedRoute.url.subscribe(frag => console.log(frag))
+    // update the current route's URL as a string if it changes
+    this.router.events.subscribe((routeEvent) => {
+        if (routeEvent instanceof NavigationEnd) {
+          this.currentRoute.set(routeEvent.url)
+        }
+      },
+    )
   }
 
 }

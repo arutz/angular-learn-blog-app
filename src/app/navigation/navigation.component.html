@@ -2,9 +2,9 @@
   <div class="navigation">
     <h3>Navigation</h3>
     <ul class="nav-menu">
-      <li class="nav-menu-item">Home</li>
-      <li class="nav-menu-item">About</li>
-      <li class="nav-menu-item">Contact</li>
+      <li class="nav-menu-item" (click)="router.navigateByUrl('home')">Home</li>
+      <li class="nav-menu-item" (click)="router.navigateByUrl('about')">About</li>
+      <li class="nav-menu-item" (click)="router.navigateByUrl('contact')">Contact</li>
     </ul>
   </div>
 </div>

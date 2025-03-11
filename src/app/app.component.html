@@ -1,22 +1,9 @@
 <div class="blog-wrapper">
-  <!-- Blog header container -->
-  <div class="blog-header">
-    <div class="blog-header-title">My angular Blog</div>
-    <div class="blog-header-subtitle">Musings of an angular newbie</div>
-  </div>
+  <app-header></app-header>
 
   <div class="blog-container">
     <!-- Blog navigation -->
-    <div class="blog-navigation">
-      <div class="navigation">
-        <h3>Navigation</h3>
-        <ul class="nav-menu">
-          <li class="nav-menu-item">Home</li>
-          <li class="nav-menu-item">About</li>
-          <li class="nav-menu-item">Contact</li>
-        </ul>
-      </div>
-    </div>
+    <app-navigation></app-navigation>
 
     <!-- Blog entries container -->
     <div class="blog-content">
@@ -28,13 +15,11 @@
               type="text"
               class="search-input"
               placeholder="Search blog entries..."
-            >
+            />
             <i class="search-icon">🔍</i>
           </div>
           <div class="category-select-group">
-            <select
-              class="category-select"
-            >
+            <select class="category-select">
               <option value="">All Categories</option>
               <option value="general">General</option>
               <option value="tech">Technology</option>
@@ -46,15 +31,13 @@
         </div>
       </div>
       <div class="blog-entries">
-        <div class="blog-entry">
-          <h2 class="blog-entry-title">My first blog entry</h2>
-          <p class="blog-entry-excerpt">This is my first blog entry and I am very proud of it :-)</p>
-          <div class="blog-entry-meta">
-            <span>By Max Mustermann</span> |
-            <span>2024-03-11 10:00am</span> |
-            <span>tech</span>
-          </div>
-        </div>
+        @for (entry of blogEntries; track entry.id) {
+          <app-entry [title]="entry.title"
+                     [description]="entry.excerpt"
+                     [createdAt]="entry.date"
+                     [user]="entry.author"
+                     [category]="entry.category" />
+        }
       </div>
 
       <!-- New blog entry container -->
@@ -67,7 +50,10 @@
           </button>
         </div>
         <!-- Blog Entry Form -->
-        <form class="blog-entry-form" style="display: none">
+        <form
+          class="blog-entry-form"
+          style="display: none"
+        >
           <div class="form-group">
             <label for="title">Entry Title</label>
             <input
@@ -75,7 +61,7 @@
               id="title"
               name="title"
               class="form-control"
-            >
+            />
           </div>
 
           <div class="form-group">

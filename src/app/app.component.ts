@@ -1,29 +1,32 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { HeaderComponent } from './header/header.component'
+import { NavigationComponent } from './navigation/navigation.component'
+import { EntryComponent } from './entry/entry.component'
 
 export type BlogCategory = 'general' | 'tech' | 'lifestyle' | 'travel' | 'food'
 
 interface BlogEntry {
+  id: string
   category: BlogCategory
-  title: string;
-  excerpt: string;
-  author: string;
-  date: Date;
+  title: string
+  excerpt: string
+  author: string
+  date: Date
 }
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent, NavigationComponent, EntryComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'My angular Blog'
-  subtitle = 'Musings of an angular newbie'
 
   blogEntries: BlogEntry[] = [
     {
+      id: '1',
       title: 'First Blog Post',
       excerpt: 'This is a brief excerpt of the first blog post...',
       author: 'John Doe',
@@ -31,6 +34,7 @@ export class AppComponent {
       category: 'general',
     },
     {
+      id: '2',
       title: 'Another Interesting Article',
       excerpt: 'Here goes a summary of the second blog entry...',
       author: 'Jane Smith',
@@ -38,6 +42,7 @@ export class AppComponent {
       category: 'lifestyle',
     },
     {
+      id: '3',
       title: 'Technology Trends',
       excerpt: 'Exploring the latest developments in tech...',
       author: 'Alex Johnson',
@@ -45,4 +50,5 @@ export class AppComponent {
       category: 'tech',
     },
   ]
+
 }

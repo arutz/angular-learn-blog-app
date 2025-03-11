@@ -8,7 +8,7 @@
   </div>
   <!-- Blog Entry Form -->
   <form #form
-        (ngSubmit)="onNewEntry(title.value, category.value, description.value); toggleForm()"
+        (ngSubmit)="onNewEntry(title.value, description.value, category.value); toggleForm()"
         class="blog-entry-form"
         [style.display]="display()? 'block':'none'"
   >

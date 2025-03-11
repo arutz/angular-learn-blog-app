@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { HeaderComponent } from './header/header.component'
 import { NavigationComponent } from './navigation/navigation.component'
@@ -15,12 +15,15 @@ import { BlogEntriesService } from './blog-entries.service'
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   constructor(private blogEntriesService: BlogEntriesService) {
   }
 
   get entries() {
     return this.blogEntriesService.blogEntries
+  }
+
+  ngOnInit(): void {
   }
 }

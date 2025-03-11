@@ -16,7 +16,7 @@ export interface BlogEntry {
 })
 export class BlogEntriesService {
 
-  blogEntries: BlogEntry[] = [
+  defaultBlogEntries: BlogEntry[] = [
     {
       id: '1',
       title: 'First Blog Post',
@@ -42,8 +42,15 @@ export class BlogEntriesService {
       category: 'tech',
     },
   ]
+  blogEntries: BlogEntry[] = []
 
   constructor() {
+    const storedEntries = localStorage.getItem('blog-entries')
+    this.blogEntries = storedEntries ? JSON.parse(storedEntries) : this.defaultBlogEntries
+  }
+
+  save() {
+    localStorage.setItem('blog-entries', JSON.stringify(this.blogEntries))
   }
 
   onNewEntry(entry: { title: string, description: string, category: string }) {
@@ -55,5 +62,6 @@ export class BlogEntriesService {
       author: 'Max Mustermann',
       category: entry.category as BlogCategory,
     })
+    this.save()
   }
 }

@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core'
+import { Component, inject, input } from '@angular/core'
 import { BlogEntriesService } from '../blog-entries.service'
 import { EntryComponent } from '../entry/entry.component'
+import { BlogCategorySearch } from '../search/search.component'
 
 export const compareDate = (date: Date, date2: Date, asc: 'asc' | 'desc' = 'asc') => {
   const result = date.getTime() == date2.getTime() ? 0 : date.getTime() > date2.getTime() ? 1 : -1
@@ -17,11 +18,16 @@ export const compareDate = (date: Date, date2: Date, asc: 'asc' | 'desc' = 'asc'
 })
 export class BlogEntriesComponent {
 
+  category = input.required<BlogCategorySearch | undefined>()
+  searchTerm = input.required<string | undefined>()
+
   private blogEntriesService = inject(BlogEntriesService)
 
-
   get entries() {
-    return [...this.blogEntriesService.blogEntries()].sort((a, b) => compareDate(a.date, b.date, 'desc'))
+    let localEntries = this.blogEntriesService.blogEntries()
+    if (this.category() !== '') localEntries = localEntries.filter(entry => entry.category === this.category())
+    if (this.searchTerm()) localEntries = localEntries.filter(entry => entry.title.toLowerCase().includes(this.searchTerm()!.toLowerCase()))
+    return [...localEntries].sort((a, b) => compareDate(a.date, b.date, 'desc'))
   }
 
 }

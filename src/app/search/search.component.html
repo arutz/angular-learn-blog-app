@@ -2,6 +2,7 @@
   <div class="search-container">
     <div class="search-input-group">
       <input
+        [(ngModel)]="searchTerm"
         type="text"
         class="search-input"
         placeholder="Search blog entries..."
@@ -9,7 +10,7 @@
       <i class="search-icon">🔍</i>
     </div>
     <div class="category-select-group">
-      <select class="category-select">
+      <select class="category-select" [(ngModel)]="category">
         <option value="">All Categories</option>
         <option value="general">General</option>
         <option value="tech">Technology</option>

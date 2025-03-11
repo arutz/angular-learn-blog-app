@@ -8,8 +8,8 @@
     <!-- Blog entries container -->
     <div class="blog-content">
       <!-- Blog search -->
-      <app-search></app-search>
-      <app-blog-entries></app-blog-entries>
+      <app-search [(category)]="category" [(searchTerm)]="searchTerm"></app-search>
+      <app-blog-entries [category]="category()" [searchTerm]="searchTerm()"></app-blog-entries>
 
       <!-- New blog entry container -->
       <app-new-entry></app-new-entry>

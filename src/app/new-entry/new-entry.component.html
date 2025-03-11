@@ -8,13 +8,15 @@
   </div>
   <!-- Blog Entry Form -->
   <form #form
-        (ngSubmit)="onNewEntry(title.value, description.value, category.value); toggleForm()"
+        ngNativeValidate
+        (ngSubmit)="onNewEntry(title.value, description.value, category.value);form.reset();toggleForm()"
         class="blog-entry-form"
         [style.display]="display()? 'block':'none'"
   >
     <div class="form-group">
       <label for="title">Entry Title</label>
       <input #title
+             required
              type="text"
              id="title"
              name="title"
@@ -25,6 +27,7 @@
     <div class="form-group">
       <label for="category">Category</label>
       <select
+        required
         #category
         id="category"
         name="category"
@@ -41,6 +44,7 @@
     <div class="form-group">
       <label for="content">Full Content</label>
       <textarea
+        required
         #description
         id="content"
         name="content"

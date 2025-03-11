@@ -1,29 +1,19 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { HeaderComponent } from './header/header.component'
 import { NavigationComponent } from './navigation/navigation.component'
-import { EntryComponent } from './entry/entry.component'
 import { FormsModule } from '@angular/forms'
 import { NewEntryComponent } from './new-entry/new-entry.component'
-import { BlogEntriesService } from './blog-entries.service'
+import { BlogEntriesComponent } from './blog-entries/blog-entries.component'
+import { SearchComponent } from './search/search.component'
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, NavigationComponent, EntryComponent, FormsModule, NewEntryComponent],
+  imports: [CommonModule, HeaderComponent, NavigationComponent, FormsModule, NewEntryComponent, BlogEntriesComponent, SearchComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {
-
-  constructor(private blogEntriesService: BlogEntriesService) {
-  }
-
-  get entries() {
-    return this.blogEntriesService.blogEntries
-  }
-
-  ngOnInit(): void {
-  }
+export class AppComponent {
 }

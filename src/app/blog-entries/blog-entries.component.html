@@ -1,0 +1,9 @@
+<div class="blog-entries">
+  @for (entry of entries; track entry.id) {
+    <app-entry [title]="entry.title"
+               [description]="entry.excerpt"
+               [createdAt]="entry.date"
+               [user]="entry.author"
+               [category]="entry.category" />
+  }
+</div>

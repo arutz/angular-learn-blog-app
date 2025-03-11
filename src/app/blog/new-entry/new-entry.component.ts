@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { BlogEntriesService } from '../blog-entries.service'
-import { ControlElementComponent } from '../shared/control-element/control-element.component'
+import { ControlElementComponent } from '../../shared/control-element/control-element.component'
 
 @Component({
   selector: 'app-new-entry',

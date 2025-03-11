@@ -7,12 +7,7 @@
 
     <!-- Blog entries container -->
     <div class="blog-content">
-      <!-- Blog search -->
-      <app-search [(category)]="category" [(searchTerm)]="searchTerm"></app-search>
-      <app-blog-entries [category]="category()" [searchTerm]="searchTerm()"></app-blog-entries>
-
-      <!-- New blog entry container -->
-      <app-new-entry></app-new-entry>
+      <router-outlet />
     </div>
   </div>
 </div>

@@ -4,7 +4,7 @@ import { NewEntryComponent } from './new-entry/new-entry.component'
 import { BlogCategorySearch, SearchComponent } from './search/search.component'
 
 @Component({
-  selector: 'app-blog',
+  selector: 'blog-root',
   imports: [
     BlogEntriesComponent,
     NewEntryComponent,

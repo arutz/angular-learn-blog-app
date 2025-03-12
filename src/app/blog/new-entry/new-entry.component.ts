@@ -4,7 +4,7 @@ import { BlogEntriesService } from '../blog-entries.service'
 import { ControlElementComponent } from '../../shared/control-element/control-element.component'
 
 @Component({
-  selector: 'app-new-entry',
+  selector: 'new-blog-entry',
   imports: [
     FormsModule,
     ControlElementComponent,

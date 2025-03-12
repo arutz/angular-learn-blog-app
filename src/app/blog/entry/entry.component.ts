@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core'
 import { DatePipe } from '@angular/common'
 
 @Component({
-  selector: 'app-entry',
+  selector: 'blog-entry',
   imports: [
     DatePipe,
   ],

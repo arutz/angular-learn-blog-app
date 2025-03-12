@@ -5,7 +5,7 @@ import { BlogCategory } from '../blog-entries.service'
 export type BlogCategorySearch = BlogCategory | ''
 
 @Component({
-  selector: 'app-search',
+  selector: 'blog-search',
   imports: [
     FormsModule,
   ],

@@ -9,7 +9,7 @@ export const compareDate = (date: Date, date2: Date, asc: 'asc' | 'desc' = 'asc'
 }
 
 @Component({
-  selector: 'app-blog-entries',
+  selector: 'blog-entries',
   imports: [
     EntryComponent,
   ],

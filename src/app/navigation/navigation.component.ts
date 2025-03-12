@@ -1,11 +1,11 @@
 import { Component, effect, OnInit, signal } from '@angular/core'
-import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router'
+import { NavigationEnd, Router } from '@angular/router'
+import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component'
 
 @Component({
   selector: 'navigation',
   imports: [
-    RouterLinkActive,
-    RouterLink,
+    NavigationMenuComponent,
   ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css',

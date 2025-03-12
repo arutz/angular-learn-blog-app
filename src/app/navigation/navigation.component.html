@@ -1,10 +1,9 @@
 <div class="blog-navigation">
-  <div class="navigation">
-    <h3>Navigation</h3>
-    <div class="nav-menu">
-      <a class="nav-menu-item" routerLink="home" routerLinkActive="nav-menu-item-active">Home</a>
-      <a class="nav-menu-item" routerLink="about" routerLinkActive="nav-menu-item-active">About</a>
-      <a class="nav-menu-item" routerLink="contact" routerLinkActive="nav-menu-item-active">Contact</a>
-    </div>
-  </div>
+  <h3>Navigation</h3>
+  <navigation-menu
+    [menuItems]="[
+      {label: 'Home', link: '/home'},
+      {label: 'About', link: '/about'},
+      {label: 'Contact', link: '/contact'}
+    ]" />
 </div>

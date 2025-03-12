@@ -1,0 +1,6 @@
+<div class="nav-menu">
+  @for (navMenu of menuItems(); track $index) {
+    <a class="nav-menu-item" routerLink="{{navMenu.link}}"
+       routerLinkActive="nav-menu-item-active">{{ navMenu.label }}</a>
+  }
+</div>

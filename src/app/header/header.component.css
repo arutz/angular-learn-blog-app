@@ -1,10 +1,10 @@
 .blog-header {
-  background-image: url('/header.jpg');
+  background: rgba(0, 0, 0, .5) url('/header.jpg') center;
+  background-blend-mode: darken;
   background-size: cover;
-  background-position: center;
   border-radius: 8px;
   color: white;
-  min-height: 150px;
+  min-height: 125px;
   max-height: 200px;
   display: flex;
   flex-direction: column;

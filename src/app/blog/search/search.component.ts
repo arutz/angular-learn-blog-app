@@ -13,6 +13,6 @@ export type BlogCategorySearch = BlogCategory | ''
   styleUrl: './search.component.css',
 })
 export class SearchComponent {
-  category = model.required<BlogCategorySearch | undefined>()
+  category = model.required<BlogCategorySearch>()
   searchTerm = model.required<string | undefined>()
 }

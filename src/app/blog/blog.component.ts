@@ -15,5 +15,5 @@ import { BlogCategorySearch, SearchComponent } from './search/search.component'
 })
 export class BlogComponent {
   searchTerm = signal<string | undefined>(undefined)
-  category = signal<BlogCategorySearch | undefined>('')
+  category = signal<BlogCategorySearch>('')
 }

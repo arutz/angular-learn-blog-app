@@ -18,7 +18,7 @@ export const compareDate = (date: Date, date2: Date, asc: 'asc' | 'desc' = 'asc'
 })
 export class BlogEntriesComponent {
 
-  category = input.required<BlogCategorySearch | undefined>()
+  category = input.required<BlogCategorySearch>()
   searchTerm = input.required<string | undefined>()
 
   private blogEntriesService = inject(BlogEntriesService)
